@@ -1,0 +1,5 @@
+name = "cr-it-landing"
+compatibility_date = "2026-06-24"
+
+[assets]
+directory = "./"
