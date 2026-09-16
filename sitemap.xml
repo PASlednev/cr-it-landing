@@ -17,29 +17,8 @@
   <!-- articles:start — генерируется сборщиком статей, руками не править -->
   <url>
     <loc>https://chickenroadstrategy.it/articles/</loc>
-    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://chickenroadstrategy.it/articles/chicken-road-truffa-o-sicuro/</loc>
-    <lastmod>2026-09-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://chickenroadstrategy.it/assets/articles/cr-app-fake-1200.webp</image:loc>
-      <image:title>Confronto tra Chicken Road su operatore autorizzato e un sito clone</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://chickenroadstrategy.it/articles/chicken-road-come-funziona/</loc>
-    <lastmod>2026-09-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://chickenroadstrategy.it/assets/articles/cr-gameplay-mid-1200.webp</image:loc>
-      <image:title>Schermata del gioco crash Chicken Road con moltiplicatore in aumento</image:title>
-    </image:image>
   </url>
   <!-- articles:end -->
 </urlset>
