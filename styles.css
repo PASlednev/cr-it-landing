@@ -1500,3 +1500,143 @@ a.footer__logo:focus-visible { opacity: 1; transform: translateY(-2px); }
   text-align: center;
   font-size: 0.9375rem;
 }
+
+/* ── Промо-модалка (spoke.js, через 30 с после загрузки, один раз за загрузку) ── */
+
+.promo {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.promo.is-open { opacity: 1; }
+.promo.is-closing { opacity: 0; }
+
+.promo-open { overflow: hidden; }
+
+.promo__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 6, 4, 0.78);
+  backdrop-filter: blur(4px);
+}
+
+.promo__card {
+  position: relative;
+  width: 100%;
+  max-width: 27rem;
+  padding: 2.75rem 2rem 2rem;
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-top: 4px solid var(--gold);
+  text-align: center;
+  transform: translateY(12px) scale(0.98);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.promo.is-open .promo__card { transform: none; }
+
+.promo__close {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: var(--cream-dim);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.promo__close:hover,
+.promo__close:focus-visible { color: var(--cream); outline: none; }
+
+.promo__mark {
+  display: block;
+  width: 11rem;
+  height: auto;
+  margin: 0 auto 1.5rem;
+}
+
+.promo__pill {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(200, 148, 26, 0.12);
+  border: 1px solid rgba(200, 148, 26, 0.3);
+  color: var(--gold-light);
+  font-family: var(--f-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.promo__title {
+  font-family: var(--f-display);
+  font-size: clamp(1.5rem, 5vw, 1.875rem);
+  line-height: 1.15;
+  color: var(--cream);
+  margin: 1.25rem 0 0.75rem;
+}
+
+.promo__offer {
+  font-size: clamp(1.125rem, 4vw, 1.375rem);
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0 0 1.5rem;
+}
+
+.promo__timer {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.85rem 1.5rem;
+  background: var(--dark);
+  border: 1px solid var(--dark-border);
+  color: var(--cream-dim);
+  font-size: 0.9375rem;
+}
+
+.promo__timer b {
+  font-family: var(--f-mono);
+  font-size: 1.25rem;
+  color: var(--crimson);
+  min-width: 3ch;
+  text-align: left;
+}
+
+.promo__cta {
+  display: block;
+  margin: 1.75rem 0 1rem;
+  padding: 1.1rem 1.5rem;
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+
+.promo__cta:hover { background: var(--gold-light); }
+
+.promo__note {
+  margin: 0;
+  color: var(--cream-dim);
+  font-size: 0.8125rem;
+}
+
+@media (max-width: 26rem) {
+  .promo__card { padding: 2.5rem 1.25rem 1.5rem; }
+}

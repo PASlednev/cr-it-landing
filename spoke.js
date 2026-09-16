@@ -206,7 +206,69 @@
     });
   }
 
-  function init() { initBurger(); initScroll(); initReveal(); initDates(); initLang(); initFaq(); }
+  /* Промо-модалка: через 30 с после загрузки страницы, один раз за загрузку —
+     закрыли, и до следующей перезагрузки не появится. Разметка создаётся здесь,
+     чтобы окно было и на страницах статей из CMS (их шаблон общий и в репозитории
+     не лежит). Ссылка — та же, что у «Gioca Ora». */
+  var PROMO_URL = "https://dig-board.com/4rBV3d55?t1=10&t7=chicken&t5=1167";
+  var PROMO_DELAY = 30000;
+  var PROMO_TIMER = 5 * 60;
+
+  function initPromo() {
+    setTimeout(show, PROMO_DELAY);
+
+    function show() {
+      var wrap = document.createElement("div");
+      wrap.className = "promo";
+      wrap.innerHTML =
+        '<div class="promo__backdrop" data-promo-close></div>' +
+        '<div class="promo__card" role="dialog" aria-modal="true" aria-labelledby="promo-title">' +
+          '<button class="promo__close" type="button" aria-label="Chiudi" data-promo-close>' +
+            '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>' +
+          '</button>' +
+          '<img class="promo__mark" src="' + assetPath() + 'assets/promo/wordmark.webp" alt="Chicken Road" width="1100" height="121" />' +
+          '<span class="promo__pill">Offerta di benvenuto</span>' +
+          '<h2 class="promo__title" id="promo-title">Richiedi il tuo bonus Chicken Road</h2>' +
+          '<p class="promo__offer">Fino a 3.000 $ + 200 giri gratis</p>' +
+          '<div class="promo__timer">L\'offerta scade tra <b data-promo-clock>5:00</b></div>' +
+          '<a class="promo__cta" href="' + PROMO_URL + '" target="_blank" rel="noopener nofollow sponsored">Richiedi il bonus</a>' +
+          '<p class="promo__note">18+. Solo nuovi giocatori. Gioca responsabilmente.</p>' +
+        '</div>';
+      document.body.appendChild(wrap);
+      document.body.classList.add("promo-open");
+
+      var clock = wrap.querySelector("[data-promo-clock]");
+      var left = PROMO_TIMER;
+      var tick = setInterval(function () {
+        left -= 1;
+        if (left <= 0) { left = 0; clearInterval(tick); }
+        clock.textContent = Math.floor(left / 60) + ":" + ("0" + (left % 60)).slice(-2);
+      }, 1000);
+
+      function close() {
+        clearInterval(tick);
+        document.removeEventListener("keydown", onKey);
+        document.body.classList.remove("promo-open");
+        wrap.classList.add("is-closing");
+        setTimeout(function () { if (wrap.parentNode) wrap.parentNode.removeChild(wrap); }, 200);
+      }
+      function onKey(e) { if (e.key === "Escape") close(); }
+
+      [].forEach.call(wrap.querySelectorAll("[data-promo-close]"), function (el) { el.addEventListener("click", close); });
+      wrap.querySelector(".promo__cta").addEventListener("click", close);
+      document.addEventListener("keydown", onKey);
+      requestAnimationFrame(function () { wrap.classList.add("is-open"); wrap.querySelector(".promo__close").focus(); });
+    }
+
+    /* Корень сайта относительно текущей страницы — статьи лежат на два уровня глубже. */
+    function assetPath() {
+      var script = document.querySelector('script[src$="spoke.js"]');
+      var src = script ? script.getAttribute("src") : "spoke.js";
+      return src.slice(0, src.lastIndexOf("spoke.js"));
+    }
+  }
+
+  function init() { initBurger(); initScroll(); initReveal(); initDates(); initLang(); initFaq(); initPromo(); }
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
