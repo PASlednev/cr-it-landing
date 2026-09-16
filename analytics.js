@@ -1,5 +1,5 @@
 (function () {
-  var GA_ID = 'G-XXXXXXXXXX'; // ID итальянского сайта ещё не заведён — пока пусто, скрипт ничего не грузит
+  var GA_ID = 'G-F1FKB65RKY';
 
   if (GA_ID.indexOf('G-') !== 0 || GA_ID === 'G-XXXXXXXXXX') return;
 
