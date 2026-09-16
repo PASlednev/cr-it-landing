@@ -17,33 +17,13 @@
   <!-- articles:start — генерируется сборщиком статей, руками не править -->
   <url>
     <loc>https://chickenroadstrategy.it/articles/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chickenroadstrategy.it/articles/chicken-road-operatori-adm/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://chickenroadstrategy.it/assets/articles/cr-cashout-payout-1200.webp</image:loc>
-      <image:title>Schermata di incasso di una vincita a Chicken Road</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://chickenroadstrategy.it/articles/chicken-road-demo-gratuita/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://chickenroadstrategy.it/assets/articles/cr-app-android-1200.webp</image:loc>
-      <image:title>Interfaccia della demo gratuita di Chicken Road su casino online</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://chickenroadstrategy.it/articles/chicken-road-truffa-o-sicuro/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -53,7 +33,7 @@
   </url>
   <url>
     <loc>https://chickenroadstrategy.it/articles/chicken-road-come-funziona/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
