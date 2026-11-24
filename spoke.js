@@ -210,7 +210,7 @@
      закрыли, и до следующей перезагрузки не появится. Разметка создаётся здесь,
      чтобы окно было и на страницах статей из CMS (их шаблон общий и в репозитории
      не лежит). Ссылка — та же, что у «Gioca Ora». */
-  var PROMO_URL = "https://dig-board.com/4rBV3d55?t1=10&t7=chicken&t5=1167";
+  var PROMO_URL = "https://funnytracker.com/NR2wMF7n";
   var PROMO_DELAY = 30000;
   var PROMO_TIMER = 5 * 60;
 
